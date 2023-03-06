@@ -19,10 +19,10 @@
         <packagemanager>apt</packagemanager>
         <type image="oem" filesystem="xfs" firmware="efi" initrd_system="dracut"
             overlayroot="true" overlayroot_write_partition="true"
-            overlayroot_readonly_partsize="256"
+            overlayroot_readonly_partsize="256" squashfscompression="zstd"
             bootpartition="true" bootpartsize="256" bootfilesystem="ext4" format="qcow2"
-            kernelcmdline="console=ttyS0 systemd.verity=1 root=/dev/disk/by-partlabel/p.lxreadonly overlay=/dev/disk/by-partlabel/p.lxroot"
-            verity_blocks="all" embed_verity_metadata="true">
+            kernelcmdline="console=ttyS0 rd.systemd.verity=1 root=/dev/disk/by-partlabel/p.lxreadonly overlay=/dev/mapper/integrityRoot"
+            verity_blocks="all" embed_verity_metadata="true" standalone_integrity="true">
             <bootloader name="grub2" />
             <oemconfig>
                 <oem-resize>false</oem-resize>
@@ -106,11 +106,7 @@
     </packages>
 
     <!-- Bootstrap configuration -->
-    <packages type="bootstrap" bootstrap_package="kiwi-bootstrap-lunar" profiles="bootstrapped">
-        <package name="ca-certificates" />
-        <package name="apt-transport-https" />
-    </packages>
-    <packages type="bootstrap" bootstrap_package="kiwi-bootstrap-lunar" profiles="development">
+    <packages type="bootstrap" bootstrap_package="kiwi-bootstrap-lunar" profiles="bootstrapped,development">
         <package name="ca-certificates" />
         <package name="apt-transport-https" />
     </packages>
