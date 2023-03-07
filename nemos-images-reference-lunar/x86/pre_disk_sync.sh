@@ -15,6 +15,7 @@ for package in \
     $(apt list --installed | grep ^linux-headers | cut -f 1 -d/) \
     $(apt list --installed | grep ^linux-modules-extra | cut -f 1 -d/) \
     linux-image-generic \
+    linux-generic \
     linux-firmware \
     coreutils \
     tar \
