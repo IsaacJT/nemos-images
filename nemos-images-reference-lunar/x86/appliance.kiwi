@@ -69,9 +69,7 @@
     <packages type="image">
         <!-- kernel -->
         <package name="linux-generic" />
-        <!-- network, ssh, sudo -->
-        <package name="openssh-client" />
-        <package name="openssh-server" />
+        <!-- Base packages -->
         <package name="usrmerge" />
         <package name="netbase" />
         <package name="sudo" />
@@ -95,6 +93,19 @@
         <package name="systemd-resolved" />
         <package name="xfsprogs" />
         <package name="parted" />
+        <package name="podman" />
+        <!-- Networking tools -->
+        <package name="openssh-client" />
+        <package name="openssh-server" />
+        <package name="net-tools" />
+        <package name="bridge-utils" />
+        <package name="ethtool" />
+        <package name="openssl" />
+        <package name="tftp" />
+        <package name="linuxptp" />
+        <package name="udhcpd" />
+        <package name="udhcpc" />
+        <!-- Container management -->
         <package name="podman" />
     </packages>
 
