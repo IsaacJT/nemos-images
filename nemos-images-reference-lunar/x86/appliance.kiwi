@@ -95,6 +95,7 @@
         <package name="systemd-resolved" />
         <package name="xfsprogs" />
         <package name="parted" />
+        <package name="podman" />
     </packages>
 
     <packages type="image" profiles="development">
